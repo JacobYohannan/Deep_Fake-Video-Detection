@@ -1,0 +1,434 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+-->
+<!doctype html>
+<html lang="zxx">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="keywords"
+    content="Estates Responsive web template, Bootstrap Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+  <title>Deep Fake</title>
+  <link href="//fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700;800&display=swap" rel="stylesheet">
+  <!-- Template CSS -->
+  <link rel="stylesheet" href="static/css/style-starter.css">
+  <style>
+    video {
+      width: 500px;
+      height: 300px;
+      display: inline-block;
+    }
+
+    .containers {
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      width: 100%;
+    }
+
+    input[type="file"] {
+      position: absolute;
+      z-index: -1;
+      top: 10px;
+      left: 8px;
+      font-size: 17px;
+      color: #b8b8b8;
+    }
+
+    .button-wrap {
+      position: relative;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 12px 18px;
+      cursor: pointer;
+      border-radius: 9px;
+      background-color: #fb5607;
+      font-size: 16px;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .button-outline {
+      display: inline-block;
+      padding: 12px 18px;
+      cursor: pointer;
+      border-radius: 9px;
+      background-color: transparent;
+      font-size: 16px;
+      font-weight: bold;
+      color: #fb5607;
+      border: 1px solid #fb5607;
+    }
+
+    #video {
+      display: none;
+    }
+
+    #output_data {
+      display: none;
+    }
+
+
+    .loader {
+      width: 48px;
+      height: 48px;
+      border: 5px solid #FFF;
+      border-bottom-color: #FF3D00;
+      border-radius: 50%;
+      display: inline-block;
+      box-sizing: border-box;
+      animation: rotation 1s linear infinite;
+    }
+
+    @keyframes rotation {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .image-row {
+      overflow: scroll;
+      width: 45vw;
+      height: 35vh;
+    }
+
+    .frame-items {
+      height: 28vh;
+    }
+  </style>
+</head>
+
+<body>
+  <!--header-->
+  <div class="header-w3l">
+    <!-- header -->
+    <header id="site-header" class="fixed-top">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg stroke">
+          <a class="navbar-brand pr-lg-5" href="index.html">
+            <img src="static/images/logo.png" alt="" class="img-fluid"> Deep Fake
+          </a>
+          <!-- if logo is image enable this   
+            <a class="navbar-brand" href="#index.html">
+                <img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
+            </a> -->
+          <button class="navbar-toggler  collapsed bg-gradient" type="button" data-toggle="collapse"
+            data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
+            <span class="navbar-toggler-icon fa icon-close fa-times"></span>
+            </span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav mr-lg-auto">
+              <li class="nav-item ">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+
+
+
+            </ul>
+            <ul class="navbar-nav search-right mt-lg-0 mt-2">
+              <li class="mx-3">
+                <a href="#btn" class="btn btn-style btn-primary">Deepfake Scanner</a>
+              </li>
+
+            </ul>
+          </div>
+          <!-- toggle switch for light and dark theme -->
+          <div class="mobile-position">
+            <nav class="navigation">
+              <div class="theme-switch-wrapper">
+                <label class="theme-switch" for="checkbox">
+                  <input type="checkbox" id="checkbox">
+                  <div class="mode-container">
+                    <i class="gg-sun"></i>
+                    <i class="gg-moon"></i>
+                  </div>
+                </label>
+              </div>
+            </nav>
+          </div>
+          <!-- //toggle switch for light and dark theme -->
+        </nav>
+      </div>
+    </header>
+    <!-- //header -->
+  </div>
+  <!--/w3l-innerblock-->
+  <div class="w3l-innerblock">
+  </div>
+
+  <section class="w3l-banner py-5" id="banner">
+    <div class="midd-w3 py-lg-5 py-md-4">
+      <div class="container py-lg-2">
+        <div class="row">
+          <div class="col-lg-6 banner-content align-self pr-lg-5" style="align-content: center;">
+            <form id="form" action="detect.html" method="POST" enctype="multipart/form-data">
+              <div class="containers">
+                <div class="button-wrap">
+
+                  <ul class="navbar-nav search-right mt-lg-0 mt-2">
+                    <li class="mx-3">
+                      <label for="upload" class="button">Add Video</label><br>
+                      <input id="upload" name="video" type="file" accept="video/*"><br>
+                      <video id="video" width="100" height="100" controls></video><br>
+                      <label for="counti">Select the Frame Count</label>
+                      <select name="count" id="count" class="form-control">
+                        <option value="10" selected>10</option>
+                        <option value="20">20</option>
+                        <option value="30">30</option>
+                        <option value="40">40</option>
+                        <option value="60">60</option>
+                        <option value="70">70</option>
+                        <option value="80">80</option>
+                        <option value="90">90</option>
+                        <option value="100">100</option>
+                      </select><br>
+                    </li>
+                  </ul>
+
+                  <input id="clear_btn" type="button" class="button button-outline" value="Clear">
+                  <input id="submit_btn" type="submit" class="button" value="Submit" style="border:#fff">
+                </div>
+              </div>
+            </form>
+
+
+          </div>
+          <div class="col-lg-6 text-center mt-lg-0 mt-md-5 mt-4">
+            <div class="image-block position-relative">
+
+
+              <span style="display: none;" class="loader"></span>
+
+
+              <div class="background1" id="output_data">
+                <h4>Result - <strong id="result"></strong></h4>
+                <h4>Confidence - <strong id="confidence"></strong></h4><br><br>
+
+                <label><b><H3>Cropped Frames</H3></b> </label>
+                <div id="frame_images">
+                  <div class="row image-row" style="flex-flow: row;">
+
+                  </div>
+                </div>
+                <!--<label>Face Cropped Frames</label>
+                <div id="frame_images1">
+                  <div class="row image-row1">
+                  </div>
+                </div>-->
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    </div>
+
+
+
+
+    <!-- Template JavaScript -->
+    <!-- <script src="static/js/jquery-3.3.1.min.js"></script> -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+    <script src="static/js/theme-change.js"></script><!-- theme switch js (light and dark)-->
+
+    <!-- disable body scroll which navbar is in active -->
+
+    <script>
+      $(function () {
+        $('.navbar-toggler').click(function () {
+          $('body').toggleClass('noscroll');
+        })
+      });
+    </script>
+    <!-- disable body scroll which navbar is in active -->
+
+    <!--/MENU-JS-->
+    <script>
+      $(window).on("scroll", function () {
+        var scroll = $(window).scrollTop();
+
+        if (scroll >= 80) {
+          $("#site-header").addClass("nav-fixed");
+        } else {
+          $("#site-header").removeClass("nav-fixed");
+        }
+      });
+
+      //Main navigation Active Class Add Remove
+      $(".navbar-toggler").on("click", function () {
+        $("header").toggleClass("active");
+      });
+      $(document).on("ready", function () {
+        if ($(window).width() > 991) {
+          $("header").removeClass("active");
+        }
+        $(window).on("resize", function () {
+          if ($(window).width() > 991) {
+            $("header").removeClass("active");
+          }
+        });
+      });
+    </script>
+
+
+
+
+    <script>
+      const input = document.getElementById('upload');
+      const video = document.getElementById('video');
+      const videoSource = document.createElement('source');
+
+      const output_data = document.getElementById('output_data');
+      const submit_btn = document.getElementById('submit_btn');
+      const clear_btn = document.getElementById('clear_btn');
+
+
+      $(document).on('submit', '#form', function (e) {
+        e.preventDefault();
+
+
+        if ($('#upload').get(0).files[0] == undefined) {
+          alert('No file uploaded');
+          return false;
+        }
+
+
+        if (!validatevideo(input.files[0]))
+          return false;
+
+
+        var formData = new FormData($("#form")[0]);
+        var form_url = $('#form').attr('action');
+
+        var result_xhr = $.ajax({
+          url: form_url,
+          type: 'POST',
+          data: formData,
+          processData: false,
+          contentType: false,
+          xhr: function () {
+            var xhr = new window.XMLHttpRequest();
+            xhr.upload.addEventListener("progress", function (evt) {
+              if (evt.lengthComputable) {
+                var percentComplete = parseInt((evt.loaded / evt.total) * 100);
+                console.log(percentComplete);
+              }
+            }, false);
+            return xhr;
+          },
+          beforeSend: function () {
+            $('#submit_btn').hide();
+            $('.loader').show();
+            $('#output_data').hide();
+          }
+        })
+
+        result_xhr.done(function (data) {
+          $('.loader').hide();
+          $('#submit_btn').show();
+
+          $('#result').html(data.result);
+          $('#confidence').html(data.confidence);
+
+
+          var imgs = '';
+          data.frames.forEach(paths => {
+            console.log(paths);
+            imgs += '<img class="img-fluid frame-items col-4" src="/img?file=' + paths + '" alt="' + paths + '">';
+          });
+          
+
+          $('.image-row').html('');
+          $('.image-row').append(imgs);
+          $('#output_data').show();
+        });
+
+        result_xhr.fail(function () {
+          $('.loader').hide();
+          $('#submit_btn').show();
+
+          alert('Page has expired, try later !');
+        });
+
+
+      });
+
+
+      function validatevideo(file) {
+        var allowedTypes = ['video/mp4', 'video/3gp', 'video/mov',];
+
+
+
+
+        const fileType = file.type;
+
+        if (!allowedTypes.includes(fileType)) {
+          alert('File extension is not supported');
+          return false;
+        }
+        return true;
+      }
+
+      input.addEventListener('change', function (e) {
+        const file = e.target.files[0];
+
+        if (!validatevideo(file))
+          return false;
+
+        const reader = new FileReader();
+
+        reader.onload = function (e) {
+          video.style.display = 'inline-block';
+          videoSource.setAttribute('src', e.target.result);
+          video.appendChild(videoSource);
+          video.load();
+          video.play();
+        };
+
+        reader.onprogress = function (e) {
+          console.log('progress: ', Math.round((e.loaded * 100) / e.total));
+        };
+
+        reader.readAsDataURL(file);
+      });
+
+
+
+
+      clear_btn.addEventListener('click', (e) => {
+        input.value = null;
+        video.removeChild(videoSource);
+        video.style.display = 'none';
+        $('#output_data').hide();
+
+      });
+
+
+
+    </script>
+    <!--//MENU-JS-->
+
+    <script src="static/js/bootstrap.min.js"></script>
+  </section>
+</body>
+
+</html>
